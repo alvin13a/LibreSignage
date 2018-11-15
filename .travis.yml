@@ -2,6 +2,8 @@
 ##  Travis CI config for LibreSignage.
 ##
 
+dist: xenial
+
 language: php
 php:
     - '7.2'
