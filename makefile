@@ -4,6 +4,8 @@
 
 NPMBIN := $(shell ./build/scripts/npmbin.sh)
 
+$(info npmbin: $(NPMBIN))
+
 # Note: This makefile assumes that $(ROOT) always has a trailing
 # slash. (which is the case when using the makefile $(dir ...)
 # function) Do not use the shell dirname command here as that WILL
