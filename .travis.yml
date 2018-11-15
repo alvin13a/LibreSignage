@@ -4,29 +4,29 @@
 
 language: php
 php:
-	- '7.2'
+    - '7.2'
 
 sudo: required
 
 branches:
-	only:
-		master
-		next
-		feature/travis
-		/v[0-9]+.[0-9]+.x/
-		/v[0-9]+.[0-9]+.[0-9]+-dev/
+    only:
+        - master
+        - next
+        - feature/travis
+        - /v[0-9]+.[0-9]+.x/
+        - /v[0-9]+.[0-9]+.[0-9]+-dev/
 
 services:
-	- docker
+    - docker
 
 before_install:
-	apt-get update
-	
+    - apt-get update
+
 install:
-	# Install dependencies
-	apt-get install pandoc ruby-sass
-	npm install
+    # Install dependencies
+    - apt-get install pandoc ruby-sass
+    - npm install
 
 script:
-	# Build the Docker image.
-	./build/helpers/docker/build_img.sh
+    # Build the Docker image.
+    - ./build/helpers/docker/build_img.sh
