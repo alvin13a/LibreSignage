@@ -22,9 +22,6 @@ CONF ?= ""
 TARGET ?=
 PASS ?=
 
-# LibreSignage build dependencies.
-DEPS := php7.2 pandoc sass npm
-
 # Production libraries.
 LIBS := $(filter-out \
 	$(shell echo "$(ROOT)"|sed 's:/$$::g'), \
@@ -388,14 +385,6 @@ initchk:
 	@:
 	set -e
 	./build/scripts/ldconf.sh $(CONF)
-
-	# Check that the require dependencies are installed.
-	for d in $(DEPS); do
-		if [ -z "`which $$d`" ]; then
-			echo "[ERROR] Missing dependency: $$d."
-			exit 1
-		fi
-	done
 
 %:
 	@:
