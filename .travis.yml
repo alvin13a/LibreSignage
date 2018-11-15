@@ -8,6 +8,14 @@ php:
 
 sudo: required
 
+branches:
+	only:
+		master
+		next
+		feature/travis
+		/v[0-9]+.[0-9]+.x/
+		/v[0-9]+.[0-9]+.[0-9]+-dev/
+
 services:
 	- docker
 
