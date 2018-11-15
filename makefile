@@ -9,7 +9,7 @@
 ROOT := $(dir $(realpath $(lastword $(MAKEFILE_LIST))))
 
 SASS_IPATHS := $(ROOT) $(ROOT)src/common/css
-SASSFLAGS := --sourcemap=none --no-cache
+SASSFLAGS := --no-source-map
 
 # Caller supplied build settings.
 VERBOSE ?= Y
