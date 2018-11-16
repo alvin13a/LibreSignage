@@ -1,10 +1,12 @@
 ##
-##  Travis CI config for LibreSignage.
+##  Travis CI config for LibreSignage. Currently only
+##  the Docker image is built and packaged in Travis
+##  since automatically configuring the apache2-debian
+##  target is quite tricky.
 ##
 
-# Use Ubuntu Xenial. This is mainly because compiling
-# LibreSignage needs a newer version of GNU make that
-# doesn't exist on Trusty.
+# Ubuntu Xenial is used mainly to get access to a newer
+# version of GNU Make.
 dist: xenial
 
 language: php
@@ -22,7 +24,6 @@ branches:
         - next
         - /v[0-9]+.[0-9]+.x/
         - /v[0-9]+.[0-9]+.[0-9]+-dev/
-        - feature/travis
 
 matrix:
     include:
@@ -39,9 +40,9 @@ install:
     - npm install
 
 before_script:
-    # Configure
+    # Configure the build
     - make configure TARGET=$target
 
 script:
-    # Install
+    # Build and install
     - make -j$(nproc) && make install
