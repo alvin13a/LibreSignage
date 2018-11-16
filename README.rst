@@ -2,6 +2,9 @@
 LibreSignage - An open source digital signage solution
 ######################################################
 
+.. image:: https://travis-ci.org/eerotal/LibreSignage.svg?branch=master
+    :target: https://travis-ci.org/eerotal/LibreSignage
+
 Table Of Contents
 -----------------
 
@@ -519,11 +522,13 @@ distribution.
 -----------------------------
 
 * Installed manually
+
   * GNU Make (> 4.0) (https://www.gnu.org/software/make/)
   * PHP (7.2) (http://www.php.net/)
   * Pandoc (> 2.2.1) (https://pandoc.org/)
 
 * Installed via npm:
+
   * SASS (https://sass-lang.com/)
   * Browserify (http://browserify.org/)
   * PostCSS (https://postcss.org/)
