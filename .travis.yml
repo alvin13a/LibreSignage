@@ -22,11 +22,11 @@ branches:
         - next
         - /v[0-9]+.[0-9]+.x/
         - /v[0-9]+.[0-9]+.[0-9]+-dev/
-		- feature/travis
+        - feature/travis
 
 matrix:
     include:
-		env:
+        env:
             - target="apache2-debian-docker"
 
 
@@ -44,4 +44,4 @@ before_script:
 
 script:
     # Install
-	- make -j$(nproc) && make install
+    - make -j$(nproc) && make install
