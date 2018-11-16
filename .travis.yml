@@ -20,9 +20,14 @@ branches:
     only:
         - master
         - next
-        - feature/travis
         - /v[0-9]+.[0-9]+.x/
         - /v[0-9]+.[0-9]+.[0-9]+-dev/
+		- feature/travis
+
+matrix:
+    include:
+		env:
+            - target="apache2-debian-docker"
 
 
 before_install:
@@ -30,9 +35,13 @@ before_install:
 
 install:
     # Install dependencies
-    - sudo apt-get install pandoc ruby-sass
+    - sudo apt-get install pandoc
     - npm install
 
+before_script:
+    # Configure
+    - make configure TARGET=$(target)
+
 script:
-    # Build the Docker image.
-    - ./build/helpers/docker/build_img.sh
+    # Install
+	- make -j$(nproc) && make install
