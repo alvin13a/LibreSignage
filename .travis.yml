@@ -40,7 +40,7 @@ install:
 
 before_script:
     # Configure
-    - make configure TARGET=$(target)
+    - make configure TARGET=$target
 
 script:
     # Install
